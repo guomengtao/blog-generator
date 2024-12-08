@@ -1,0 +1,47 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+node_modules/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+
+# Build files
+dist/
+build/
+
+# Vercel or deployment-related files
+.vercel/
+.vscode/
+
+# Editor and IDE settings
+*.swp
+*.swo
+*.idea/
+.vscode/
+*.code-workspace
+*.sublime-workspace
+*.sublime-project
+
+# OS-generated files
+*.DS_Store
+*.AppleDouble
+*.LSOverride
+
+# GitHub-related files
+.github/
