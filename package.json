@@ -8,14 +8,13 @@
     "start": "next start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
     "express": "^4.21.2",
-    "next": "^15.0.4",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  }
+    "next": "^13.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC"
 }

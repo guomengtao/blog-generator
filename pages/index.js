@@ -1,37 +1,37 @@
+// pages/index.js
 import { useState } from 'react';
 
 export default function Home() {
   const [blogName, setBlogName] = useState('');
-  const [submitted, setSubmitted] = useState(false);
+  const [subdomain, setSubdomain] = useState('');
 
-  const handleInputChange = (e) => {
-    setBlogName(e.target.value);
-  };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // 构建子域名 URL
+    const generatedSubdomain = `${blogName}-english-blog.blog.rinuo.com`;  // 你可以根据需要更改格式
+    setSubdomain(generatedSubdomain);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setSubmitted(true);
-
-    // Here you can call an API or logic to create the subdomain
-    alert(`Blog name is: ${blogName}`);
+    // 重定向到新的子域名
+    window.location.href = `https://${generatedSubdomain}`;
   };
 
   return (
     <div>
-      <h1>Welcome to My Blog Generator!</h1>
+      <h1>欢迎来到我的博客生成器！</h1>
+      <p>请输入您的博客名称：</p>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="blog-name">Enter your blog name:</label>
         <input
           type="text"
-          id="blog-name"
           value={blogName}
-          onChange={handleInputChange}
+          onChange={(e) => setBlogName(e.target.value)}
+          placeholder="博客名称"
           required
         />
-        <button type="submit">Generate Blog</button>
+        <button type="submit">生成博客</button>
       </form>
-
-      {submitted && <p>Your blog subdomain will be: {blogName}.blog-generator.pearl.vercel.app</p>}
+      {subdomain && (
+        <p>您的博客子域名是：<a href={`https://${subdomain}`}>{subdomain}</a></p>
+      )}
     </div>
   );
 }

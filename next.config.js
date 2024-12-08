@@ -1,11 +1,13 @@
 // next.config.js
 module.exports = {
-    async rewrites() {
+    reactStrictMode: true,
+    async redirects() {
       return [
         {
           source: '/:subdomain',
-          destination: '/subdomain', // 将所有子域名路由到 /subdomain 页面
+          destination: '/[subdomain]',
+          permanent: true,
         },
-      ]
+      ];
     },
-  }
+  };
